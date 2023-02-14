@@ -9,33 +9,76 @@ let auto_rotirano = -90;
 
 console.log(parseInt(car.style.top) + "px")
 
+let modifier = 15;
+let keysPressed = {};
 
-document.addEventListener('keydown', (event) => {
-    let code = event.code;
-    let modifier = 15;
-
-    if(code == "ArrowUp") {
+function pomak(modifier){
+    if(keysPressed["ArrowUp"] == true) {
         car.style.top = `${parseInt(car.style.top) + modifier * Math.sin(Math.PI/180 * (auto_rotirano))}px`;
         car.style.left = `${parseInt(car.style.left) + modifier * Math.cos(Math.PI/180 * (auto_rotirano))}px`;
 
         car.style.transform = `rotate(${auto_rotirano + (volan_rotirano/modifier)}deg)`
         auto_rotirano = auto_rotirano + volan_rotirano/modifier
-    } else if(code == "ArrowDown") {
+    } if(keysPressed["ArrowDown"] == true) {
         car.style.top = `${parseInt(car.style.top) - modifier * Math.sin(Math.PI/180 * (auto_rotirano))}px`;
         car.style.left = `${parseInt(car.style.left) - modifier * Math.cos(Math.PI/180 * (auto_rotirano))}px`;
 
         car.style.transform = `rotate(${auto_rotirano + (volan_rotirano/modifier)}deg)`
         auto_rotirano = auto_rotirano + volan_rotirano/modifier
-    } else if(code == "ArrowLeft") {
+    } if(keysPressed["ArrowLeft"] == true) {
         if(volan_rotirano >= -90+modifier)
             volan_rotirano -= modifier;
-    } else if(code == "ArrowRight") {
+
+        if(volan_rotirano == 0)
+            car.style.backgroundImage = "url('img/car_0.png')"
+        if(volan_rotirano < 0)
+            car.style.backgroundImage = "url('img/car_-30.png')"
+        if(volan_rotirano < -30)
+            car.style.backgroundImage = "url('img/car_-60.png')"
+        if(volan_rotirano < -60)
+            car.style.backgroundImage = "url('img/car_-90.png')"
+        if(volan_rotirano > 0)
+            car.style.backgroundImage = "url('img/car_30.png')"
+        if(volan_rotirano > 30)
+            car.style.backgroundImage = "url('img/car_60.png')"
+        if(volan_rotirano > 60)
+            car.style.backgroundImage = "url('img/car_90.png')"
+
+    } if(keysPressed["ArrowRight"] == true) {
         if(volan_rotirano <= 90-modifier)
             volan_rotirano += modifier;
+            if(volan_rotirano == 0)
+            car.style.backgroundImage = "url('img/car_0.png')"
+        if(volan_rotirano < 0)
+            car.style.backgroundImage = "url('img/car_-30.png')"
+        if(volan_rotirano < -30)
+            car.style.backgroundImage = "url('img/car_-60.png')"
+        if(volan_rotirano < -60)
+            car.style.backgroundImage = "url('img/car_-90.png')"
+        if(volan_rotirano > 0)
+            car.style.backgroundImage = "url('img/car_30.png')"
+        if(volan_rotirano > 30)
+            car.style.backgroundImage = "url('img/car_60.png')"
+        if(volan_rotirano > 60)
+            car.style.backgroundImage = "url('img/car_90.png')"
+
     }
 
     console.log(volan_rotirano)
     volan.style.transform = `rotate(${volan_rotirano}deg)`
+}
+ 
+document.addEventListener('keyup', (event) => {
+    delete keysPressed[event.key];
+    pomak(modifier)
+});
 
-    //alert(`Key pressed ${name} \r\n Key code value: ${code}`);
+
+document.addEventListener('keydown', (event) => {
+    let code = event.code;
+
+    keysPressed[event.key] = true;
+    console.log(keysPressed)
+
+    pomak(modifier);
   }, false);

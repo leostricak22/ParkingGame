@@ -1,16 +1,19 @@
 body {
     overflow: hidden;
+    background-color: gray;
 }  
 
 .car {
     position: relative;
-    background-color: red;
     width: 200px;
     height: 100px;
     top: 0px;
     left: 0px;
-    border-right: 15px blue solid;
     transform: rotate(-90deg);
+    background-image: url("img/car_0.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
 }
 
 .target {
@@ -28,4 +31,54 @@ body {
     left: 0;
     bottom: 0;
     rotate: 0deg;
+}
+
+.parking1 {
+    position: absolute;
+    border-top: white solid 15px;
+    border-bottom: white solid 15px;
+    width: 250px;
+    height: 150px;
+    right: 0;
+    top: 0;
+}
+
+.parking2 {
+    position: absolute;
+    border-top: white solid 15px;
+    border-bottom: white solid 15px;
+    width: 250px;
+    height: 150px;
+    right: 0;
+    top: 165px;
+}
+
+.parking3 {
+    position: absolute;
+    border-top: white solid 15px;
+    border-bottom: white solid 15px;
+    width: 250px;
+    height: 150px;
+    right: 0;
+    top: 330px;
+}
+
+.parking4 {
+    position: absolute;
+    border-top: white solid 15px;
+    border-bottom: white solid 15px;
+    width: 250px;
+    height: 150px;
+    right: 0;
+    top: 495px;
+}
+
+.parking5 {
+    position: absolute;
+    border-top: white solid 15px;
+    border-bottom: white solid 15px;
+    width: 250px;
+    height: 150px;
+    right: 0;
+    top: 660px;
 }
