@@ -1,5 +1,6 @@
 let car = document.getElementById("car");
 let volan = document.getElementById("volan");
+let target = document.getElementById("target");
 
 car.style.top = "0px"
 car.style.left = "0px"
@@ -11,6 +12,20 @@ console.log(parseInt(car.style.top) + "px")
 
 let modifier = 15;
 let keysPressed = {};
+
+let parking_br=1;
+
+function odredi_parking() {
+    parking_br = Math.floor(Math.random() * 5)+1
+
+    if(parking_br == 1){
+        target.style.top = "25px"
+    } else if(parking_br == 2){
+        target.style.top = "190px"
+    }
+
+    console.log("park:" +parking_br)
+}
 
 function pomak(modifier){
     if(keysPressed["ArrowUp"] == true) {
@@ -81,4 +96,6 @@ document.addEventListener('keydown', (event) => {
     console.log(keysPressed)
 
     pomak(modifier);
-  }, false);
+}, false);
+
+odredi_parking();
