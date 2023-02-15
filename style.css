@@ -1,6 +1,9 @@
 body {
     overflow: hidden;
     background-color: gray;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }  
 
 .car {
