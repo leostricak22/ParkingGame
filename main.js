@@ -2,8 +2,8 @@ let car = document.getElementById("car");
 let volan = document.getElementById("volan");
 let target = document.getElementById("target");
 
-car.style.top = "0px"
-car.style.left = "0px"
+car.style.top = "250px"
+car.style.left = "500px"
 
 let volan_rotirano = 0; 
 let auto_rotirano = -90;
@@ -30,8 +30,8 @@ function move_forward(modifier) {
 
     zadnje = "forward"
 
-    car.style.top = `${parseInt(car.style.top) + modifier * Math.sin(Math.PI/180 * (auto_rotirano))}px`;
-    car.style.left = `${parseInt(car.style.left) + modifier * Math.cos(Math.PI/180 * (auto_rotirano))}px`;
+    car.style.top = `${Math.floor(parseInt(car.style.top) + modifier * Math.sin(Math.PI/180 * (auto_rotirano)))}px`;
+    car.style.left = `${Math.floor(parseInt(car.style.left) + modifier * Math.cos(Math.PI/180 * (auto_rotirano)))}px`;
 
     car.style.transform = `rotate(${Math.floor(auto_rotirano + (volan_rotirano/(15*(15/modifier))))}deg)`
     auto_rotirano = Math.floor(auto_rotirano + volan_rotirano/(15*(15/modifier)))
@@ -43,8 +43,8 @@ function move_backwards(modifier) {
 
     zadnje = "backwards"
 
-    car.style.top = `${parseInt(car.style.top) - modifier * Math.sin(Math.PI/180 * (auto_rotirano))}px`;
-    car.style.left = `${parseInt(car.style.left) - modifier * Math.cos(Math.PI/180 * (auto_rotirano))}px`;
+    car.style.top = `${Math.floor(parseInt(car.style.top) - modifier * Math.sin(Math.PI/180 * (auto_rotirano)))}px`;
+    car.style.left = `${Math.floor(parseInt(car.style.left) - modifier * Math.cos(Math.PI/180 * (auto_rotirano)))}px`;
 
     car.style.transform = `rotate(${Math.floor(auto_rotirano - (volan_rotirano/(15*(15/modifier))))}deg)`
     auto_rotirano = Math.floor(auto_rotirano - volan_rotirano/(15*(15/modifier)))
@@ -137,4 +137,4 @@ var images = {
     ]
 }
 
-odredi_parking();
+//odredi_parking();

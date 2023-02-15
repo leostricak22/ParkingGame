@@ -10,8 +10,8 @@ body {
     position: relative;
     width: 200px;
     height: 100px;
-    top: 0px;
-    left: 0px;
+    top: 250px;
+    left: 500px;
     transform: rotate(-90deg);
     background-image: url("img/car_0.png");
     background-position: center;
@@ -82,5 +82,58 @@ body {
     width: 250px;
     height: 150px;
     right: 0;
+    top: 660px;
+}
+
+
+
+
+.parking11 {
+    position: absolute;
+    border-top: white solid 15px;
+    border-bottom: white solid 15px;
+    width: 250px;
+    height: 150px;
+    left: 0;
+    top: 0;
+}
+
+.parking21 {
+    position: absolute;
+    border-top: white solid 15px;
+    border-bottom: white solid 15px;
+    width: 250px;
+    height: 150px;
+    left: 0;
+    top: 165px;
+}
+
+.parking31 {
+    position: absolute;
+    border-top: white solid 15px;
+    border-bottom: white solid 15px;
+    width: 250px;
+    height: 150px;
+    left: 0;
+    top: 330px;
+}
+
+.parking41 {
+    position: absolute;
+    border-top: white solid 15px;
+    border-bottom: white solid 15px;
+    width: 250px;
+    height: 150px;
+    left: 0;
+    top: 495px;
+}
+
+.parking51 {
+    position: absolute;
+    border-top: white solid 15px;
+    border-bottom: white solid 15px;
+    width: 250px;
+    height: 150px;
+    left: 0;
     top: 660px;
 }
